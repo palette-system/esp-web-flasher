@@ -146,10 +146,12 @@ export class ESPLoader extends EventTarget {
       dataTerminalReady: false,
       requestToSend: true,
     });
+    await sleep(50);
     await this.port.setSignals({
       dataTerminalReady: bootloader,
       requestToSend: false,
     });
+    await sleep(50);
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
 
